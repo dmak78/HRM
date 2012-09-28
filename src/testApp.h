@@ -17,31 +17,17 @@ public:
     void loadRace(string race);
 	void keyPressed(int key);
 
-    
     float newScaleX;
     float newScaleY;
     
-    bool editForehead;
+	ofxFaceTracker userTracker;
+	ofxFaceTracker raceTracker;
 
-	ofxFaceTracker camTracker;
-	ofVideoGrabber cam;
-	ofxFaceTracker srcTracker;
-	ofImage src;
-    ofImage camMemoryTexture;
-    ofImage srcMemoryTexture;
-    ofImage mask1;
-    ofImage mask2;
-    ofImage aveMask;
-    ofImage aveMask2;
-	vector<ofVec2f> srcPoints;
-    vector<ofVec2f> camPoints;
+    ofImage userImage;
+    ofImage raceImage;
 
-	bool cloneReady;
-    bool srcCloneReady;
-	Clone camClone;
-    Clone srcClone;
-    Clone cloneClone;
-	ofFbo srcFbo, srcMask, camFbo, camMask, orgMask1, orgMask2, finalFbo;
+	Clone finalClone;
+	ofFbo raceFbo, userFbo, maskFbo;
 
 	ofDirectory faces;
 	int currentFace;
@@ -49,15 +35,9 @@ public:
     ofDirectory races;
 	int currentRace;
     
-    ofEasyCam easyCam;
+    ofMesh raceImageMesh;
     
-    ofMesh camMesh;
-    ofMesh srcMesh;
-    
-    float depthScale;
     int faceStrength;
-    
-    ofImage		image;
     
     int captureWidth;
     int captureHeight;
@@ -66,15 +46,6 @@ public:
 	float scale;
 	ofVec3f orientation;
 	ofMatrix4x4 rotationMatrix;
-
-    bool srcNeedsSetting;
-    bool camNeedsSetting;
-    
-    bool srcReady;
-    bool camReady;
-    
-    bool drawFaceFrame; 
-    bool drawWireFrame;
     
     int frameCounter;
     
@@ -82,6 +53,5 @@ public:
     
     float theAverageX;
     float theAverageY;
-    
 
 };
