@@ -12,7 +12,6 @@ public:
 	void setup();
 	void update();
 	void draw();
-	void dragEvent(ofDragInfo dragInfo);
 	void loadFace(string face);
     void loadRace(string race);
 	void keyPressed(int key);
@@ -37,7 +36,7 @@ public:
     
     ofMesh raceImageMesh;
     
-    int faceStrength;
+    int blendingStrength;
     
     int captureWidth;
     int captureHeight;
@@ -48,8 +47,6 @@ public:
 	ofMatrix4x4 rotationMatrix;
     
     int frameCounter;
-    
-    float templeDifference;
     
     float theAverageX;
     float theAverageY;
